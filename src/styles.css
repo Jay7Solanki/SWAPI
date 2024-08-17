@@ -1,0 +1,18 @@
+@import "~ag-grid-community/styles/ag-grid.css";
+@import "~ag-grid-community/styles/ag-theme-material.css";
+
+.bg-primary-opacity {
+  background-color: rgb(223, 223, 253);
+}
+
+.gray {
+    background-color: rgb(244, 242, 242);
+}
+
+.white {
+    background-color: white;
+}
+
+.primary-border {
+    border: 1px solid rgb(223, 223, 253);
+}

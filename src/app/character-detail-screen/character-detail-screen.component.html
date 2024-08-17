@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Character Detail</h1>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="p-3 bg-primary-opacity rounded">
+        <h3 class="text-center"> {{ characterDetail.name }}</h3>
+        <p><b>Birth Year: </b>{{ characterDetail.birth_year }}</p>
+        <p><b>Gender: </b>{{ characterDetail.gender }}</p>
+        <p><b>Height: </b>{{ characterDetail.height }} cm</p>
+        <p><b>Weight: </b>{{ characterDetail.mass }} kg</p>
+        <p><b>Created At: </b>{{createdDate}}</p>
+        <p><b>Edited At: </b>{{ editedDate }}</p>
+        <p><b>Hair Color: </b>{{ characterDetail.hair_color }}</p>
+        <p><b>Eye Color: </b>{{ characterDetail.eye_color }}</p>
+        <p><b>Skin Color: </b>{{ characterDetail.skin_color }}</p>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="p-3 bg-primary-opacity rounded">
+        <h1>Films</h1>
+        <div *ngFor="let url of characterDetail?.films">
+          <film-card [url]="url"></film-card>
+        </div>
+        <div>
+          <h1>Species</h1>
+          <div #speciesComponent></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
