@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { SWAPIService } from '../swapi.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { SWAPIService } from '../swapi.service';
 
 export class FilmCardComponent implements OnInit {
 
-  constructor(private swapiService: SWAPIService) {
+  constructor(private swapiService: SWAPIService, private changeDetectorRef: ChangeDetectorRef) {
   }
 
   @Input() url: string = '';
@@ -25,6 +25,7 @@ export class FilmCardComponent implements OnInit {
     this.swapiService?.getFilmDetail(this.url)?.subscribe({
       next: (res: any) => {        
         this.filmDetail = res;
+        this.changeDetectorRef?.detectChanges();
       },
       error: (error) => {
       }
